@@ -10,12 +10,11 @@ namespace Berberim.Controllers
     {
         //identitnin içinde bulunan kullanıcı kayit ve giriş islemleri için kullanılan classlardır
         private readonly UserManager<AppUser> _userManager; //kullanıcıların yönetimi
-        private readonly SignInManager<AppUser> _singInManager; //oturum açmak
 
-        public LoginController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public LoginController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
-            _singInManager = signInManager;
+            
         }
 
        
@@ -54,6 +53,7 @@ namespace Berberim.Controllers
 
             return View(e);
         }
+
 
     }
 }
