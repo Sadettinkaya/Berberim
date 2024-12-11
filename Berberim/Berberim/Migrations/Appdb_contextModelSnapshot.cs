@@ -117,7 +117,7 @@ namespace Berberim.Migrations
 
                     b.HasIndex("salonID");
 
-                    b.ToTable("Hizmet");
+                    b.ToTable("hizmets");
                 });
 
             modelBuilder.Entity("Berberim.Entities.Personel", b =>
@@ -152,7 +152,7 @@ namespace Berberim.Migrations
 
                     b.HasIndex("salonID");
 
-                    b.ToTable("Personel");
+                    b.ToTable("personnels");
                 });
 
             modelBuilder.Entity("Berberim.Entities.Randevu", b =>
@@ -205,7 +205,7 @@ namespace Berberim.Migrations
 
                     b.HasIndex("personelID");
 
-                    b.ToTable("Randevu");
+                    b.ToTable("randevus");
                 });
 
             modelBuilder.Entity("Berberim.Entities.Role", b =>
@@ -259,7 +259,7 @@ namespace Berberim.Migrations
 
                     b.HasKey("salonID");
 
-                    b.ToTable("Salon");
+                    b.ToTable("salons");
                 });
 
             modelBuilder.Entity("Berberim.Entities.Uzmanlik", b =>
@@ -275,7 +275,7 @@ namespace Berberim.Migrations
 
                     b.HasKey("UzmanlikID");
 
-                    b.ToTable("Uzmanlik");
+                    b.ToTable("uzmanlıks");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
