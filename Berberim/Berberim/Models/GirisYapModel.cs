@@ -9,7 +9,7 @@ namespace Berberim.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Lütfen sifrenizi giriniz.")]
-        [MinLength(6, ErrorMessage = "sifreniz en az 6 karakter olmalıdır.")]
+        [MinLength(3, ErrorMessage = "sifreniz en az 3 karakter olmalıdır.")]
         public string sifre { get; set; }
     }
 }

@@ -14,6 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20241214185946_AddIdentityTables.cs" />
+    <Compile Remove="Migrations\20241214185946_AddIdentityTables.Designer.cs" />
+    <Compile Remove="Migrations\20241214213717_userroleatama.cs" />
+    <Compile Remove="Migrations\20241214213717_userroleatama.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Areas\Admin\Views\Personel\Listele.cshtml" />
     <None Include="wwwroot\kaiadmin-lite-1.2.0\assets\css\demo.css.map" />
     <None Include="wwwroot\kaiadmin-lite-1.2.0\assets\css\kaiadmin.css.map" />

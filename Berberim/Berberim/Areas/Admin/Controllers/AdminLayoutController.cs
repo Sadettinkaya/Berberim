@@ -1,11 +1,13 @@
 ﻿using Berberim.Db_context;
 using Berberim.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Berberim.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize(Roles = "Admin")]
 	public class AdminLayoutController : Controller
     {
 
