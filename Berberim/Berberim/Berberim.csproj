@@ -7,17 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\**" />
     <Compile Remove="wwwroot\AdminLTE-master\**" />
-    <Content Remove="Areas\**" />
     <Content Remove="wwwroot\AdminLTE-master\**" />
-    <EmbeddedResource Remove="Areas\**" />
     <EmbeddedResource Remove="wwwroot\AdminLTE-master\**" />
-    <None Remove="Areas\**" />
     <None Remove="wwwroot\AdminLTE-master\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Personel\Listele.cshtml" />
     <None Include="wwwroot\kaiadmin-lite-1.2.0\assets\css\demo.css.map" />
     <None Include="wwwroot\kaiadmin-lite-1.2.0\assets\css\kaiadmin.css.map" />
     <None Include="wwwroot\kaiadmin-lite-1.2.0\assets\css\plugins.css.map" />
@@ -100,6 +97,11 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
 </Project>

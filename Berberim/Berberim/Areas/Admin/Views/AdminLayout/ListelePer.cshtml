@@ -1,22 +1,10 @@
-﻿
-
-
-
-@using Berberim.Entities
+﻿@using Berberim.Entities
 @model IEnumerable<Personel>
-
 
 @{
 
 	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
-
-
-
-
-
 
 <h2>Personel Listesi</h2>
 <br />@* 
@@ -48,8 +36,9 @@
 				<td>@per.personelEmail</td>
 				<td>@per.personelPassword</td>
 
-				<td><a href="" class="btn btn-outline-info">Güncelle</a></td>
-				<td><a href ="" class="btn btn-outline-danger">Sil</a></td>
+				<td><a href="/Admin/AdminLayout/GuncellePer/@per.personelID" class="btn btn-outline-info">Güncelle</a></td>
+				<td><a href ="/Admin/AdminLayout/SilPer/@per.personelID" class="btn btn-outline-danger">Sil</a></td>
+				
 			</tr>
 		}
 	</tbody>

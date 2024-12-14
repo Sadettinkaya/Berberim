@@ -1,0 +1,57 @@
+﻿
+
+@model Berberim.Entities.Personel
+
+
+
+@{
+
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Personel</h1>
+
+
+<form asp-area="Admin" asp-controller="AdminLayout" asp-action="EklePer" method="post">
+    <div asp-validation-summary="All"></div>
+
+
+    <div class="mb-3">
+        <label asp-for="personelName" class="form-label"> Personel Ad Soyad Giriniz:</label>
+        <input asp-for="personelName" name="personelName" class="form-control">
+        <span asp-validation-summary="personelName"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="personelEmail" class="form-label"> Personel Email Giriniz:</label>
+        <input asp-for="personelEmail" name="personelEmail" class="form-control">
+        <span asp-validation-summary="personelEmail"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="personelPassword" class="form-label"> Personel Sifre Giriniz:</label>
+        <input asp-for="personelPassword" name="personelPassword" class="form-control">
+        <span asp-validation-summary="personelPassword"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="musaitSaat" class="form-label">Calısma Saatleri giriniz:</label>
+        <input asp-for="musaitSaat" name="musaitSaat" class="form-control">
+        <span asp-validation-summary="musaitSaat"></span>
+
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="salonID" class="form-label">Salon ID:</label>
+        <input asp-for="salonID" name="salonID" class="form-control" value="1" readonly />
+        <span asp-validation-for="salonID"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UzmanlikID" class="form-label">Uzmanlık Alanı giriniz:</label>
+        <input asp-for="UzmanlikID" name="UzmanlikID" class="form-control">
+        <span asp-validation-summary="UzmanlikID"></span>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Personeli Ekle</button>
+</form>

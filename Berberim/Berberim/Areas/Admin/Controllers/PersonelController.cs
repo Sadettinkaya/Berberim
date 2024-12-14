@@ -4,7 +4,8 @@ namespace Berberim.Areas.Admin.Controllers
 {
     public class PersonelController : Controller
     {
-        public IActionResult Listele()
+		[Area("Admin")]
+		public IActionResult Listele()
         {
             return View();
         }

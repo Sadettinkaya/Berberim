@@ -15,12 +15,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Victus\OneDrive\Masaüstü\Berberim\Berberim\Berberim
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Views/AdminLayout/EklePer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRcRWtsZVBlci5jc2h0bWw=
+[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Areas/Admin/Views/AdminLayout/EklePer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5MYXlvdXRcRWtsZVBlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Views/AdminLayout/ListelePer.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5MYXlvdXRcTGlzdGVsZVBlci5jc2h0bWw=
+[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Areas/Admin/Views/AdminLayout/GuncellePer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5MYXlvdXRcR3VuY2VsbGVQZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Areas/Admin/Views/AdminLayout/ListelePer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5MYXlvdXRcTGlzdGVsZVBlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Areas/Admin/Views/AdminLayout/SilPer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5MYXlvdXRcU2lsUGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Areas/Admin/Views/Personel/Listele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGVyc29uZWxcTGlzdGVsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Victus/OneDrive/Masaüstü/Berberim/Berberim/Berberim/Views/Giris/Index.cshtml]
