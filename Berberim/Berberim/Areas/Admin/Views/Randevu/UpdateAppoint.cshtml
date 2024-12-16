@@ -1,0 +1,84 @@
+﻿@model Berberim.Entities.Randevu  // Tekil personel modeli belirtiliyor
+
+
+@{
+    ViewData["Title"] = "UpdateAppoint";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1> Randevu Güncelle</h1>
+
+
+<form asp-area="Admin" asp-controller="Randevu" asp-action="UpdateAppoint" method="post">
+    <div asp-validation-summary="All"></div>
+
+
+    <input type="hidden" asp-for="randevuID" value="@Model.randevuID" name="randevuID" />
+
+    <div class="mb-3">
+        <label asp-for="MusteriName" class="form-label"> Müsteri Ad Soyad :</label>
+        <input asp-for="MusteriName" value="@Model.MusteriName" name="MusteriName" class="form-control">
+        <span asp-validation-for="customerName"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="tel" class="form-label"> Müsteri telefon :</label>
+        <input type="tel" asp-for="tel" value="@Model.tel" name="tel" class="form-control">
+        <span asp-validation-for="tel"></span>
+    </div>
+ 
+
+
+
+    <!-- Personel -->
+    <div class="mb-3">
+        <label asp-for="personelID" class="form-label">Personel Seçin:</label>
+        <select asp-for="personelID" class="form-control" name="personelID">
+            <option value="">Personel Seçin</option>
+            @foreach (var personnel in ViewBag.PersonnelList as List<Berberim.Entities.Personel>)
+            {
+                <option value="@personnel.personelID"
+                @(personnel.personelID == Model.personelID ? "selected" : "")>
+                    @personnel.personelName
+                </option>
+            }
+        </select>
+        <span asp-validation-for="personelID" class="text-danger"></span>
+    </div>
+
+    <!-- İşlem -->
+    <div class="form-group">
+        <label asp-for="hizmetID">İşlem Seçiniz:</label>
+        <select asp-for="hizmetID" class="form-control" name="hizmetID">
+            <option value="">İşlem Seçin</option>
+            @foreach (var hizmet in ViewBag.services as List<Berberim.Entities.Hizmet>)
+            {
+                <option value="@hizmet.hizmetID"
+                @(hizmet.hizmetID == Model.hizmetID ? "selected" : "")>
+                    @hizmet.hizmetName
+                </option>
+            }
+        </select>
+        <span asp-validation-for="hizmetID" class="text-danger"></span>
+    </div>
+
+
+    <!-- Tarih -->
+    <div class="form-group">
+        <label asp-for="randevuTarih">Randevu Tarihi:</label>
+        <input type="date" value="@Model.randevuTarih.ToString("yyyy-MM-dd")" class="form-control" name="randevuTarih" asp-for="randevuTarih" />
+        <span asp-validation-for="randevuTarih" class="text-danger"></span>
+    </div>
+
+    <!-- Saat -->
+    <div class="form-group">
+        <label asp-for="randevuSaat">Randevu Saati:</label>
+        <input type="time" value="@Model.randevuSaat.ToString(@"hh\:mm")" class="form-control" name="randevuSaat" asp-for="randevuSaat" />
+        <span asp-validation-for="randevuSaat" class="text-danger"></span>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-secondary">Güncelle</button>
+</form>

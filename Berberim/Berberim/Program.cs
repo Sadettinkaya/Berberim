@@ -62,7 +62,7 @@ app.UseEndpoints(endpoints =>
 
 	endpoints.MapControllerRoute(
 		name: "default",
-		pattern: "{controller=Home}/{action=Index}/{id?}");
+		pattern: "{controller=Giris}/{action=Index}/{id?}");
 });
 
 // Rolleri ve varsayýlan Admin kullanýcýyý oluþturma

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3KVdADwoAfvmduDfh5LUC4i45kmezWSoiuRK85RPuL0=",
+  "Hash": "nw8IWPPJH2CmyFn+CB1zNxm1oGd44scfIeZwGlOtzgM=",
   "Source": "Berberim",
   "BasePath": "_content/Berberim",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\images\\giris.jpeg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "images/giris.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\giris.jpeg"
     },
     {
       "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\js\\site.js",
