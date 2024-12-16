@@ -79,7 +79,7 @@ namespace Berberim.Controllers
 
 
 				// Başarılı işlem sonrası yönlendirme
-				return RedirectToAction("KayitOl", "Login");
+				return RedirectToAction("Index", "Home");
 			}
 			else
 			{

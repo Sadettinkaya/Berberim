@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Shared\NewFolder\**" />
     <Compile Remove="wwwroot\AdminLTE-master\**" />
+    <Content Remove="Views\Shared\NewFolder\**" />
     <Content Remove="wwwroot\AdminLTE-master\**" />
+    <EmbeddedResource Remove="Views\Shared\NewFolder\**" />
     <EmbeddedResource Remove="wwwroot\AdminLTE-master\**" />
+    <None Remove="Views\Shared\NewFolder\**" />
     <None Remove="wwwroot\AdminLTE-master\**" />
   </ItemGroup>
 
@@ -19,6 +23,13 @@
     <Compile Remove="Migrations\20241214213717_userroleatama.cs" />
     <Compile Remove="Migrations\20241214213717_userroleatama.Designer.cs" />
     <Compile Remove="Models\HizmetModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\salon.jpg" />
+    <Content Remove="wwwroot\images\salon1.png" />
+    <Content Remove="wwwroot\images\Salon2.png" />
+    <Content Remove="wwwroot\images\Salon3.png" />
   </ItemGroup>
 
   <ItemGroup>

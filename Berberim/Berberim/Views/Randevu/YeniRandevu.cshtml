@@ -1,79 +1,86 @@
 ﻿@model Berberim.Models.RandevuModel
 
-
-
-
-<h2>Yeni Randevu</h2>
-
-
-<form asp-action="YeniRandevu" method="post">
-
-    <!-- Ad Soyad -->
-    <div class="form-group">
-        <label asp-for="adSoyad">Ad Soyad</label>
-        <input class="form-control" asp-for="adSoyad" placeholder="Adınızı ve soyadınızı giriniz" />
-        <span asp-validation-for="adSoyad" class="text-danger"></span>
-    </div>
-
-    <!-- Hizmet -->
-    <div class="form-group">
-        <label asp-for="service">Hizmet Seçiniz</label>
-        <select class="form-control" asp-for="service">
-            <option value="">Hizmet Seçin</option>
-            @foreach (var service in ViewBag.Services as List<Berberim.Entities.Hizmet>)
-            {
-                <option value="@service.hizmetID">@service.hizmetName</option>
-            }
-        </select>
-        <span asp-validation-for="service" class="text-danger"></span>
-    </div>
-
-    <!-- personel -->
-    <div class="form-group">
-        <label asp-for="personnel">Personel Seçiniz</label>
-        <select class="form-control" asp-for="personnel">
-            <option value="">Personel Seçin</option>
-            @foreach (var per in ViewBag.Personels as List<Berberim.Entities.Personel>)
-            {
-                <option value="@per.personelID">@per.personelName</option>
-            }
-        </select>
-        <span asp-validation-for="personnel" class="text-danger"></span>
-    </div>
-
-    <!-- Tarih -->
-    <div class="form-group">
-        <label asp-for="date">Tarih</label>
-        <input type="date" class="form-control" asp-for="date" />
-        <span asp-validation-for="date" class="text-danger"></span>
-    </div>
-
-    <!-- Saat -->
-    <div class="form-group">
-        <label asp-for="saat">Saat</label>
-        <input type="time" class="form-control" asp-for="saat" />
-        <span asp-validation-for="saat" class="text-danger"></span>
-    </div>
-
-    <!-- Telefon Numarası -->
-    <div class="form-group">
-        <label asp-for="PhoneNumber">Telefon Numarası</label>
-        <input type="tel" class="form-control" asp-for="PhoneNumber" placeholder="Telefon numaranızı giriniz" pattern="[0-9]{10}" />
-        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-    </div>
-
-    <!-- Notlar -->
-    <div class="form-group">
-        <label asp-for="Notes">Notlar</label>
-        <textarea class="form-control" asp-for="Notes" rows="3" placeholder="Eklemek istediğiniz bir not var mı?"></textarea>
-        <span asp-validation-for="Notes" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Randevu Al</button>
-</form>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewData["Title"] = "Yeni Randevu";
 }
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="col-md-6">
+            <div class="card shadow-lg" style="background-color: rgba(59, 5, 19, 0.9); color: #f8f9fa; border-radius: 10px;">
+                <div class="card-body">
+                    <h2 class="text-center mb-4" style="font-weight: bold; color: #ffc107;">Yeni Randevu</h2>
+
+                    <form asp-action="YeniRandevu" method="post">
+                        <!-- Ad Soyad -->
+                        <div class="form-group mb-3">
+                            <label for="adSoyad" class="form-label">Ad Soyad</label>
+                            <input asp-for="adSoyad" class="form-control" placeholder="Adınızı ve soyadınızı giriniz" style="background-color: #333; color: #fff; border: none;" />
+                            <span asp-validation-for="adSoyad" class="text-danger"></span>
+                        </div>
+
+                        <!-- Hizmet Seçiniz -->
+                        <div class="form-group mb-3">
+                            <label for="service" class="form-label">Hizmet Seçiniz</label>
+                            <select asp-for="service" class="form-control" style="background-color: #333; color: #fff; border: none;">
+                                <option value="">Hizmet Seçin</option>
+                                @foreach (var service in ViewBag.Services as List<Berberim.Entities.Hizmet>)
+                                {
+                                    <option value="@service.hizmetID">@service.hizmetName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="service" class="text-danger"></span>
+                        </div>
+
+                        <!-- Personel Seçiniz -->
+                        <div class="form-group mb-3">
+                            <label for="personnel" class="form-label">Personel Seçiniz</label>
+                            <select asp-for="personnel" class="form-control" style="background-color: #333; color: #fff; border: none;">
+                                <option value="">Personel Seçin</option>
+                                @foreach (var personel in ViewBag.Personels as List<Berberim.Entities.Personel>)
+                                {
+                                    <option value="@personel.personelID">@personel.personelName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="personnel" class="text-danger"></span>
+                        </div>
+
+                        <!-- Tarih -->
+                        <div class="form-group mb-3">
+                            <label for="date" class="form-label">Tarih</label>
+                            <input asp-for="date" type="date" class="form-control" style="background-color: #333; color: #fff; border: none;" />
+                            <span asp-validation-for="date" class="text-danger"></span>
+                        </div>
+
+                        <!-- Saat -->
+                        <div class="form-group mb-3">
+                            <label for="saat" class="form-label">Saat</label>
+                            <input asp-for="saat" type="time" class="form-control" style="background-color: #333; color: #fff; border: none;" />
+                            <span asp-validation-for="saat" class="text-danger"></span>
+                        </div>
+
+                        <!-- Telefon Numarası -->
+                        <div class="form-group mb-3">
+                            <label for="PhoneNumber" class="form-label">Telefon Numarası</label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Telefon numaranızı giriniz" style="background-color: #333; color: #fff; border: none;" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <!-- Notlar -->
+                        <div class="form-group mb-3">
+                            <label for="Notes" class="form-label">Notlar</label>
+                            <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Eklemek istediğiniz bir not var mı?" style="background-color: #333; color: #fff; border: none;"></textarea>
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+
+                        <!-- Buton -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-warning text-dark fw-bold px-4 py-2">Randevu Al</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewData["Title"] = "Hakkımızda";
+}
+
+<div class="container my-5">
+    <!-- Slider Başlangıcı -->
+    <div id="salonCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/salon4.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Salon Görseli 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/salon5.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Salon Görseli 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/images/salon6.png" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="Salon Görseli 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#salonCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Önceki</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#salonCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Sonraki</span>
+        </button>
+    </div>
+    <!-- Slider Bitişi -->
+    <!-- Hakkımızda İçeriği -->
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mb-4 text-warning fw-bold">Hakkımızda</h2>
+            <p>
+                Berberim ailesi olarak **Fethiye'de** 20 yıldan fazla süredir siz değerli müşterilerimize hizmet vermekteyiz.
+                Salonumuz, profesyonel kadrosu ve uygun fiyatları ile bölgedeki en güvenilir ve kaliteli berber salonlarından biri olarak tanınmaktadır.
+            </p>
+            <p>
+                Hem modern saç kesim teknikleri hem de geleneksel berberlik anlayışını birleştirerek sizlere **en iyi hizmeti** sunmayı amaçlıyoruz.
+                Müşteri memnuniyeti bizim için her zaman **önceliklidir**.
+            </p>
+            <p>
+                Fethiye'nin kalbinde yer alan salonumuzda saç kesimi, sakal tıraşı, cilt bakımı gibi birçok hizmetimiz bulunmaktadır.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/salon7.png" class="img-fluid rounded shadow" alt="Salon İç Görsel">
+        </div>
+    </div>
+
+    <!-- Bilgiler ve Vizyon -->
+    <div class="mt-5">
+        <h3 class="text-warning fw-bold mb-3">Neden Biz?</h3>
+        <ul class="list-group">
+            <li class="list-group-item bg-transparent text-light">✅ 20 Yıllık Tecrübe</li>
+            <li class="list-group-item bg-transparent text-light">✅ Uygun Fiyat Politikası</li>
+            <li class="list-group-item bg-transparent text-light">✅ Profesyonel ve Güler Yüzlü Ekip</li>
+            <li class="list-group-item bg-transparent text-light">✅ Müşteri Memnuniyeti Odaklı Hizmet</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Stil -->
+<style>
+    body {
+        color: #f8f9fa;
+    }
+
+    .list-group-item {
+        border: none;
+        font-size: 1.1rem;
+    }
+</style>

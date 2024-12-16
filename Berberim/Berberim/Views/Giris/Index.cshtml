@@ -1,6 +1,6 @@
 ﻿@model Berberim.Models.GirisYapModel
 @{
-    Layout = "_GirisKayitLayout";
+    Layout = "~/Views/Shared/_GirisKayitLayout.cshtml";
     ViewData["Title"] = "Giriş Yap";
 }
 
@@ -18,7 +18,7 @@
         <span asp-validation-for="sifre" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+    <button type="submit" class="btn btn-warning text-dark fw-bold px-4 py-2">Giriş Yap</button>
 </form>
 
 <div class="footer">
