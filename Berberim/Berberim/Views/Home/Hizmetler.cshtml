@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewData["Title"] = "Hizmetlerimiz";
+}
+
+<div class="container my-5">
+    <!-- Başlık -->
+    <h2 class="text-center text-warning fw-bold mb-4">Hizmetlerimiz</h2>
+    <p class="text-center text-light mb-5">
+        Berberim ailesi olarak siz değerli müşterilerimize sunduğumuz profesyonel hizmetler aşağıda listelenmiştir.
+    </p>
+
+    <!-- Hizmetler Kartları -->
+    <div class="row justify-content-center gy-4">
+        <!-- Saç Kesimi -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100">
+                <img src="/images/sackesim.jpeg" class="card-img-top" alt="Saç Kesimi">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-bold">Saç Kesimi</h5>
+                    <p class="card-text">Profesyonel stilistlerimizle modern ve klasik saç kesimleri.</p>
+                    <p class="fw-bold mb-1">Süre: 30 dk</p>
+                    <p class="fw-bold mb-3">Fiyat: 300 TL</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sakal Kesimi -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100">
+                <img src="/images/sakal.jpeg" class="card-img-top" alt="Sakal Kesimi">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-bold">Sakal Kesimi</h5>
+                    <p class="card-text">Yüz hatlarınıza uygun şekillendirme ve bakım hizmeti.</p>
+                    <p class="fw-bold mb-1">Süre: 10 dk</p>
+                    <p class="fw-bold mb-3">Fiyat: 50 TL</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saç Boyama -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100">
+                <img src="/images/sacboya.jpeg" class="card-img-top" alt="Saç Boyama">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-bold">Saç Boyama</h5>
+                    <p class="card-text">Sağlıklı ve kaliteli malzemelerle saç boyama hizmeti.</p>
+                    <p class="fw-bold mb-1">Süre: 45 dk</p>
+                    <p class="fw-bold mb-3">Fiyat: 400 TL</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bıyık Bakımı -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100">
+                <img src="/images/bıyık.jpeg" class="card-img-top" alt="Bıyık Bakımı">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-bold">Bıyık Bakımı</h5>
+                    <p class="card-text">Bıyık bakımı ve şekillendirme hizmetimizle tarzınızı tamamlayın.</p>
+                    <p class="fw-bold mb-1">Süre: 30 dk</p>
+                    <p class="fw-bold mb-3">Fiyat: 100 TL</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cilt Bakımı -->
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-0 shadow-lg h-100">
+                <img src="/images/cilt.png" class="card-img-top" alt="Cilt Bakımı">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-bold">Cilt Bakımı</h5>
+                    <p class="card-text">Cildinizin yenilenmesi ve sağlıklı görünmesi için profesyonel bakım.</p>
+                    <p class="fw-bold mb-1">Süre: 60 dk</p>
+                    <p class="fw-bold mb-3">Fiyat: 500 TL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stil -->
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.7);
+        }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+</style>

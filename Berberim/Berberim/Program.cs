@@ -1,5 +1,6 @@
 using Berberim.Db_context;
 using Berberim.Entities;
+using Berberim.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -101,5 +102,5 @@ using (var scope = app.Services.CreateScope())
 		}
 	}
 }
-
+await HizmetSeedData.SeedHizmets(app);
 app.Run();

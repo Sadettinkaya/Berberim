@@ -28,6 +28,16 @@ namespace Berberim.Controllers
             return View();
         }
 
+        public IActionResult İletisim()
+        {
+            return View();
+        }
+
+        public IActionResult Hizmetler()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

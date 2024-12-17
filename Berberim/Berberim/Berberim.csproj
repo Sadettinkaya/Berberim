@@ -22,6 +22,8 @@
     <Compile Remove="Migrations\20241214185946_AddIdentityTables.Designer.cs" />
     <Compile Remove="Migrations\20241214213717_userroleatama.cs" />
     <Compile Remove="Migrations\20241214213717_userroleatama.Designer.cs" />
+    <Compile Remove="Migrations\20241217124508_seeddata.cs" />
+    <Compile Remove="Migrations\20241217124508_seeddata.Designer.cs" />
     <Compile Remove="Models\HizmetModel.cs" />
   </ItemGroup>
 
