@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aSFD/fz2IeF6e+DQJ0CpkKXw/99pmyKCyIZjeK+qQqU=",
+  "Hash": "6zbRXh3CX9Qeyw63Lpo5cLz/PuO0VXex6IaV/8q9blQ=",
   "Source": "Berberim",
   "BasePath": "_content/Berberim",
   "Mode": "Default",
@@ -8515,6 +8515,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\denemegörsel.jpg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/denemegörsel.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\denemegörsel.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\WhatsApp Görsel 2024-07-22 saat 17.57.31_.jpg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/WhatsApp Görsel 2024-07-22 saat 17.57.31_.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\WhatsApp Görsel 2024-07-22 saat 17.57.31_.jpg"
     }
   ]
 }
