@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Berberim.Areas.Admin.Controllers
 {
-	[Area("Admin")]
+    [Area("Admin")]
 	[Authorize(Roles = "Admin")]
 	public class AdminLayoutController : Controller
     {
@@ -18,6 +18,8 @@ namespace Berberim.Areas.Admin.Controllers
             _context = context;
         }
 
+       
+        [HttpGet]
         public IActionResult ListelePer()
         {
             var model = _context.personnels
@@ -33,6 +35,7 @@ namespace Berberim.Areas.Admin.Controllers
             return View();
         }
 
+       
         [HttpPost]
         public async Task<IActionResult> EklePer(Personel per)
         {
@@ -72,7 +75,6 @@ namespace Berberim.Areas.Admin.Controllers
 
         }
 
-
         public IActionResult SilPer(int id)
         {
             var personel = _context.personnels.Find(id);
@@ -88,7 +90,6 @@ namespace Berberim.Areas.Admin.Controllers
             return View();
         }
 
-
         public async Task<IActionResult> GuncellePer(int id)
         {
 
@@ -100,6 +101,7 @@ namespace Berberim.Areas.Admin.Controllers
             }
             return View(personel); // Bulunan personel bilgilerini View'e gönder
         }
+
 
         [HttpPost]
         public async Task<IActionResult> GuncellePer(Personel p)

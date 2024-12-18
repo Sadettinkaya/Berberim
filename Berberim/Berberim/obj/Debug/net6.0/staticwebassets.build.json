@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6zbRXh3CX9Qeyw63Lpo5cLz/PuO0VXex6IaV/8q9blQ=",
+  "Hash": "NHinqSj7XmrgMld1NrXkFZKjQl17jsWQry5ElSTpR5s=",
   "Source": "Berberim",
   "BasePath": "_content/Berberim",
   "Mode": "Default",
@@ -8549,6 +8549,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\WhatsApp Görsel 2024-07-22 saat 17.57.31_.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\WhatsApp Görsel 2024-07-22 saat 17.57.31_20b99ca5.jpg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/WhatsApp Görsel 2024-07-22 saat 17.57.31_20b99ca5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\WhatsApp Görsel 2024-07-22 saat 17.57.31_20b99ca5.jpg"
     }
   ]
 }

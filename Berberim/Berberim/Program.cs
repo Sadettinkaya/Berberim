@@ -56,7 +56,10 @@ app.UseAuthorization();  // Yetkilendirme
 
 app.UseEndpoints(endpoints =>
 {
-	endpoints.MapControllerRoute(
+    // REST API Controller'larý eklemek için
+    endpoints.MapControllers();
+
+    endpoints.MapControllerRoute(
 		name: "areas",
 		pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
 	);
