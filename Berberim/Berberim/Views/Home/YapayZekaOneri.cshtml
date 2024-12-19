@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Text.Json
+@using Berberim.Models
+@{
     Layout = "~/Views/Shared/_GenelLayout.cshtml";
     ViewData["Title"] = "Yapay Zeka Saç Modeli Önerisi";
 }
@@ -16,8 +18,31 @@
 @if (ViewBag.Response != null)
 {
     <div class="mt-4">
-        <h4>API Yanıtı:</h4>
-        <pre>@ViewBag.Response</pre>
+        <h4>Oluşturulan Görsel:</h4>
+        @{
+            try
+            {
+                // JSON'u ayrıştır ve linki çek
+                var jsonDocument = JsonDocument.Parse(ViewBag.Response.ToString());
+                var imageUrl = jsonDocument.RootElement
+                .GetProperty("data")[0]
+                .GetProperty("url")
+                .GetString();
+
+                if (!string.IsNullOrEmpty(imageUrl))
+                {
+                    <img src="@imageUrl" alt="Yapay Zeka Saç Modeli" class="img-fluid mt-3" />
+                }
+                else
+                {
+                    <div class="alert alert-warning">Görsel URL'si bulunamadı.</div>
+                }
+            }
+            catch (Exception ex)
+            {
+                <div class="alert alert-danger">JSON ayrıştırma hatası: @ex.Message</div>
+            }
+        }
     </div>
 }
 

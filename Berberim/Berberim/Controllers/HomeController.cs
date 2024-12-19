@@ -9,7 +9,6 @@ namespace Berberim.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         private readonly IWebHostEnvironment _environment;
 
         public HomeController(IWebHostEnvironment environment, ILogger<HomeController> logger)
@@ -39,28 +38,42 @@ namespace Berberim.Controllers
                 await photo.CopyToAsync(stream);
             }
 
-            // Hugging Face API'ye istek yap
-            var result = await CallHuggingFaceAPI(filePath);
+            // OpenAI API'ye istek yap
+            var result = await CallOpenAIAPI(filePath);
             ViewBag.Response = result;
 
             return View();
         }
 
-        private async Task<string> CallHuggingFaceAPI(string filePath)
+        private async Task<string> CallOpenAIAPI(string filePath)
         {
-            var apiUrl = "https://api-inference.huggingface.co/models/facebook/deit-small-patch16-224"; //model
-            var apiKey = "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"; // Hugging Face API Key
+            var apiUrl = "https://api.openai.com/v1/images/generations"; // DALL·E endpointi
+            var apiKey = "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"; // OpenAI API Key
 
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
-            using var form = new MultipartFormDataContent();
-            form.Add(new ByteArrayContent(System.IO.File.ReadAllBytes(filePath)), "file", Path.GetFileName(filePath));
+            // OpenAI API'ye JSON isteği hazırla
+            var requestData = new
+            {
+                prompt = "Bu fotoğraftaki kişinin yüzünü aynı tutarak erkek saç modelini kısa ve modern bir şekilde değiştir.",
+                n = 1, // Tek bir görsel üret
+                size = "1024x1024"
+            };
 
-            var response = await client.PostAsync(apiUrl, form);
-            return await response.Content.ReadAsStringAsync();
+            var json = System.Text.Json.JsonSerializer.Serialize(requestData);
+            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(apiUrl, content);
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception($"OpenAI API Hatası: {responseContent}");
+            }
+
+            return responseContent;
         }
-
 
 
 
