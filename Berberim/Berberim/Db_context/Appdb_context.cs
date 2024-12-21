@@ -13,5 +13,7 @@ namespace Berberim.Db_context
 		public DbSet<Uzmanlik>? uzmanlıks { get; set; }
 		public DbSet<Hizmet>? hizmets { get; set; }
 		public DbSet<Randevu>? randevus { get; set; }
+
+		public DbSet<PersonelKazanc> kazancs { get; set; }
 	}
 }

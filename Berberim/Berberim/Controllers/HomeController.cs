@@ -56,7 +56,7 @@ namespace Berberim.Controllers
             // OpenAI API'ye JSON isteği hazırla
             var requestData = new
             {
-                prompt = "Bu fotoğraftaki kişinin yüzünü aynı tutarak erkek saç modelini kısa ve modern bir şekilde değiştir.",
+                prompt = "Generate a high-quality image of a modern, short haircut for the man in the photo, keeping the face intact.",
                 n = 1, // Tek bir görsel üret
                 size = "1024x1024"
             };

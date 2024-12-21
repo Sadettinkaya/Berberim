@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\Earnings\**" />
     <Compile Remove="Views\Shared\NewFolder\**" />
     <Compile Remove="wwwroot\AdminLTE-master\**" />
+    <Content Remove="Areas\Admin\Views\Earnings\**" />
     <Content Remove="Views\Shared\NewFolder\**" />
     <Content Remove="wwwroot\AdminLTE-master\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Earnings\**" />
     <EmbeddedResource Remove="Views\Shared\NewFolder\**" />
     <EmbeddedResource Remove="wwwroot\AdminLTE-master\**" />
+    <None Remove="Areas\Admin\Views\Earnings\**" />
     <None Remove="Views\Shared\NewFolder\**" />
     <None Remove="wwwroot\AdminLTE-master\**" />
   </ItemGroup>

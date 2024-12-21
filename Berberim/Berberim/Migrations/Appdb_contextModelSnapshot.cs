@@ -155,6 +155,30 @@ namespace Berberim.Migrations
                     b.ToTable("personnels");
                 });
 
+            modelBuilder.Entity("Berberim.Entities.PersonelKazanc", b =>
+                {
+                    b.Property<int>("PersonelKazancID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("PersonelKazancID"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("PersonnelID")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("TotalPersonelKazanc")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("PersonelKazancID");
+
+                    b.HasIndex("PersonnelID");
+
+                    b.ToTable("kazancs");
+                });
+
             modelBuilder.Entity("Berberim.Entities.Randevu", b =>
                 {
                     b.Property<int>("randevuID")
@@ -409,6 +433,17 @@ namespace Berberim.Migrations
                     b.Navigation("Uzmanliks");
 
                     b.Navigation("salon");
+                });
+
+            modelBuilder.Entity("Berberim.Entities.PersonelKazanc", b =>
+                {
+                    b.HasOne("Berberim.Entities.Personel", "Personnel")
+                        .WithMany()
+                        .HasForeignKey("PersonnelID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Personnel");
                 });
 
             modelBuilder.Entity("Berberim.Entities.Randevu", b =>

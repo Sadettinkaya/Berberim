@@ -87,7 +87,7 @@ using (var scope = app.Services.CreateScope())
 
 	// Admin kullanýcý oluþtur
 	var adminEmail = "G221210006@sakarya.edu.tr";
-	var adminPassword = "sau"; // Þifrenizi daha karmaþýk yapabilirsiniz
+	var adminPassword = "sau"; // odev için sifre
 	if (await userManager.FindByEmailAsync(adminEmail) == null)
 	{
 		var adminUser = new AppUser

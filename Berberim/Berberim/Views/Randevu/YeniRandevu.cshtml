@@ -13,6 +13,7 @@
                     <h2 class="text-center mb-4" style="font-weight: bold; color: #ffc107;">Yeni Randevu</h2>
 
                     <form asp-action="YeniRandevu" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
                         <!-- Ad Soyad -->
                         <div class="form-group mb-3">
                             <label for="adSoyad" class="form-label">Ad Soyad</label>
@@ -23,14 +24,20 @@
                         <!-- Hizmet Seçiniz -->
                         <div class="form-group mb-3">
                             <label for="service" class="form-label">Hizmet Seçiniz</label>
-                            <select asp-for="service" class="form-control" style="background-color: #333; color: #fff; border: none;">
-                                <option value="">Hizmet Seçin</option>
+                            <select asp-for="service" class="form-control" id="ucretgoster" style="background-color: #333; color: #fff; border: none;">
+                                <option value="" data-price="0">Hizmet Seçin</option>
                                 @foreach (var service in ViewBag.Services as List<Berberim.Entities.Hizmet>)
                                 {
-                                    <option value="@service.hizmetID">@service.hizmetName</option>
+                                    <option value="@service.hizmetID" data-price="@service.hizmetPrice">@service.hizmetName</option>
                                 }
                             </select>
                             <span asp-validation-for="service" class="text-danger"></span>
+                        </div>
+
+                        <!-- Hizmet Fiyatı -->
+                        <div class="form-group">
+                            <label>Hizmet Fiyatı:</label>
+                            <p id="servicePriceDisplay">Seçtiğiniz hizmetin fiyatı burada görünecek.</p>
                         </div>
 
                         <!-- Personel Seçiniz -->
@@ -84,3 +91,22 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+   
+    <script>
+        document.getElementById('ucretgoster').addEventListener('change', function () {
+            // Seçilen option
+            var selectedOption = this.options[this.selectedIndex];
+            // Fiyat bilgisi
+            var price = selectedOption.getAttribute('data-price');
+            // Fiyat alanını güncelle
+            var priceDisplay = document.getElementById('servicePriceDisplay');
+            if (price && price > 0) {
+                priceDisplay.textContent = `Seçtiğiniz hizmetin fiyatı: ${price} TL`;
+            } else {
+                priceDisplay.textContent = "Seçtiğiniz hizmetin fiyatı burada görünecek.";
+            }
+        });
+    </script>
+}
