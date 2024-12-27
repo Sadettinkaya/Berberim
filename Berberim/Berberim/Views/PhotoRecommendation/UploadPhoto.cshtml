@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewData["Title"] = "Fotoğraf Önerisi";
+}
+
+<h1 class="text-center mb-4">Fotoğraf Önerisi</h1>
+
+<div class="card mx-auto" style="max-width: 600px;">
+    <div class="card-body">
+        <form asp-action="UploadPhoto" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="photo">Fotoğraf Yükleyin:</label>
+                <input type="file" name="photo" class="form-control" accept="image/*" />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Öneri Al</button>
+        </form>
+    </div>
+</div>
+
+@if (ViewBag.ImageResult != null)
+{
+    <div class="mt-4 text-center">
+        <h4>Önerilen Saç Modeli:</h4>
+        <img src="@ViewBag.ImageResult" alt="Saç Modeli" class="img-fluid mt-3" />
+    </div>
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-4">
+        @ViewBag.Error
+    </div>
+}

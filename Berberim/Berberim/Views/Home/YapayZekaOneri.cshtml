@@ -1,54 +1,42 @@
 ﻿@using System.Text.Json
-@using Berberim.Models
 @{
     Layout = "~/Views/Shared/_GenelLayout.cshtml";
     ViewData["Title"] = "Yapay Zeka Saç Modeli Önerisi";
 }
 
-<h2>Yapay Zeka Saç Modeli Önerisi</h2>
-
-<form asp-action="YapayZekaOneri" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="photo">Fotoğraf Yükleyin</label>
-        <input type="file" name="photo" class="form-control" />
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="text-center mb-4">
+        <h1 class="display-5">Yapay Zeka Saç Modeli Önerisi</h1>
+        <p class="text-muted">Fotoğraf yükleyin ve yapay zeka önerisiyle saç stilinizi keşfedin.</p>
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Öneri Al</button>
-</form>
 
-@if (ViewBag.Response != null)
-{
-    <div class="mt-4">
-        <h4>Oluşturulan Görsel:</h4>
-        @{
-            try
-            {
-                // JSON'u ayrıştır ve linki çek
-                var jsonDocument = JsonDocument.Parse(ViewBag.Response.ToString());
-                var imageUrl = jsonDocument.RootElement
-                .GetProperty("data")[0]
-                .GetProperty("url")
-                .GetString();
-
-                if (!string.IsNullOrEmpty(imageUrl))
-                {
-                    <img src="@imageUrl" alt="Yapay Zeka Saç Modeli" class="img-fluid mt-3" />
-                }
-                else
-                {
-                    <div class="alert alert-warning">Görsel URL'si bulunamadı.</div>
-                }
-            }
-            catch (Exception ex)
-            {
-                <div class="alert alert-danger">JSON ayrıştırma hatası: @ex.Message</div>
-            }
-        }
+    <!-- Fotoğraf Yükleme Formu -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Fotoğraf Yükle</h5>
+            <form asp-action="YapayZekaOneri" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Fotoğraf Yükle:</label>
+                    <input type="file" name="photo" id="photo" class="form-control" accept="image/*" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Öneri Al</button>
+            </form>
+        </div>
     </div>
-}
 
-@if (ViewBag.Error != null)
-{
-    <div class="alert alert-danger mt-2">
-        @ViewBag.Error
-    </div>
-}
+    <!-- Yapay Zeka Önerisi Bölümü -->
+    @if (ViewBag.EditedImageUrl != null)
+    {
+        <div class="alert alert-success text-center">
+            <h5>Saç Stili ve Rengi İçin Yapay Zeka Önerisi:</h5>
+            <p>@ViewBag.EditedImageUrl</p>
+        </div>
+    }
+    else if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger text-center">
+            <p>@ViewBag.Error</p>
+        </div>
+    }
+</div>

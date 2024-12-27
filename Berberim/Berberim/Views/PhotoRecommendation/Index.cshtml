@@ -1,0 +1,44 @@
+﻿@using System.Text.Json
+@{
+    Layout = "~/Views/Shared/_GenelLayout.cshtml";
+    ViewData["Title"] = "Görsel Tabanlı Saç Modeli Önerisi";
+}
+
+<div class="container mt-5">
+    <!-- Sayfa Başlığı -->
+    <div class="text-center mb-4">
+        <h1 class="display-5">Görsel Tabanlı Saç Modeli Önerisi</h1>
+        <p class="text-muted">Yapay zeka ile saç modeli önerileri alın.</p>
+    </div>
+
+    <!-- Fotoğraf Yükleme Formu -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Fotoğraf Yükle</h5>
+            <form asp-action="RecommendPhoto" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Fotoğraf Yükle:</label>
+                    <input type="file" name="photo" id="photo" class="form-control" accept="image/*" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Öneri Al</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Yapay Zeka Önerisi -->
+    @if (ViewBag.ImageUrl != null)
+    {
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title">Önerilen Saç Modeli:</h5>
+                <img src="@ViewBag.ImageUrl" alt="Saç Modeli" class="img-fluid mt-3" style="max-width: 100%; height: auto;" />
+            </div>
+        </div>
+    }
+    else if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-3 text-center">
+            <p>@ViewBag.Error</p>
+        </div>
+    }
+</div>

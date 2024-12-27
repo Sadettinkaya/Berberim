@@ -1,8 +1,10 @@
 ﻿using Berberim.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.Net.Http.Headers;
-using static System.Net.WebRequestMethods;
+using System.Text;
 
 namespace Berberim.Controllers
 {
@@ -10,6 +12,8 @@ namespace Berberim.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IWebHostEnvironment _environment;
+        private const string ApiKey = "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"; // API anahtarınızı buraya ekleyin
+        private const string ApiEndpoint = "https://api.groq.com/openai/v1/chat/completions"; // Groq Vision API Endpoint
 
         public HomeController(IWebHostEnvironment environment, ILogger<HomeController> logger)
         {
@@ -31,53 +35,83 @@ namespace Berberim.Controllers
                 return View();
             }
 
-            // Fotoğrafı kaydet
-            var filePath = Path.Combine(_environment.WebRootPath, "uploads", photo.FileName);
+            // Fotoğrafı "uploads" klasörüne kaydet
+            var uploadsPath = Path.Combine(_environment.WebRootPath, "uploads");
+            if (!Directory.Exists(uploadsPath))
+            {
+                Directory.CreateDirectory(uploadsPath);
+            }
+
+            var filePath = Path.Combine(uploadsPath, photo.FileName);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await photo.CopyToAsync(stream);
             }
 
-            // OpenAI API'ye istek yap
-            var result = await CallOpenAIAPI(filePath);
-            ViewBag.Response = result;
-
-            return View();
-        }
-
-        private async Task<string> CallOpenAIAPI(string filePath)
-        {
-            var apiUrl = "https://api.openai.com/v1/images/generations"; // DALL·E endpointi
-            var apiKey = "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"; // OpenAI API Key
-
-            using var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-
-            // OpenAI API'ye JSON isteği hazırla
-            var requestData = new
+            // Fotoğrafı Base64 formatına çevirin
+            string base64Image;
+            using (var memoryStream = new MemoryStream())
             {
-                prompt = "Generate a high-quality image of a modern, short haircut for the man in the photo, keeping the face intact.",
-                n = 1, // Tek bir görsel üret
-                size = "1024x1024"
-            };
-
-            var json = System.Text.Json.JsonSerializer.Serialize(requestData);
-            var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-
-            var response = await client.PostAsync(apiUrl, content);
-            var responseContent = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception($"OpenAI API Hatası: {responseContent}");
+                await photo.CopyToAsync(memoryStream);
+                byte[] byteArray = memoryStream.ToArray();
+                base64Image = Convert.ToBase64String(byteArray);
             }
 
-            return responseContent;
+            // JSON yükü oluştur
+            var messagePayload = new
+            {
+                model = "llama-3.2-11b-vision-preview",
+                messages = new[]
+                {
+                    new
+                    {
+                        role = "user",
+                        content = new object[]
+                        {
+                            new { type = "text", text = "What hairstyle would you recommend for this photo?" },
+                            new { type = "image_url", image_url = new { url = $"data:image/jpeg;base64,{base64Image}" } }
+                        }
+                    }
+                },
+                temperature = 1,
+                max_tokens = 1024,
+                top_p = 1,
+                stream = false
+            };
+
+            // API'ye istek gönder
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {ApiKey}");
+
+                    var jsonPayload = JsonConvert.SerializeObject(messagePayload);
+                    var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await client.PostAsync(ApiEndpoint, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseContent = await response.Content.ReadAsStringAsync();
+                        var jsonResponse = JObject.Parse(responseContent);
+                        var message = jsonResponse["choices"]?[0]?["message"]?["content"]?.ToString();
+
+                        // Yanıtı ViewBag'e ata
+                        ViewBag.EditedImageUrl = message;
+                        return View();
+                    }
+
+                    ViewBag.EditedImageUrl = "API isteği başarısız";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = $"API Hatası: {ex.Message}";
+                return View();
+            }
         }
-
-
-
-
 
         public IActionResult Index()
         {

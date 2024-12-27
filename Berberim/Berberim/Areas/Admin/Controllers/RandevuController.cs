@@ -87,35 +87,32 @@ namespace Berberim.Areas.Admin.Controllers
         }
 
 
+
+
+
         [HttpPost]
         public async Task<IActionResult> UpdateAppoint(Randevu p)
         {
-
-
-            if (ModelState.IsValid) // Form verileri geçerli mi?
+            // ModelState doğrulaması
+            if (ModelState.IsValid)
             {
                 var randevu = await _context.randevus.FirstOrDefaultAsync(per => per.randevuID == p.randevuID); // Eski kaydı bul
-
-
 
                 if (randevu != null)
                 {
                     // Alanları güncelle
-
                     randevu.MusteriName = p.MusteriName;
+                    randevu.tel = p.tel;
                     randevu.MusteriID = p.MusteriID;
                     randevu.personelID = p.personelID;
                     randevu.hizmetID = p.hizmetID;
-                    randevu.onaylandimi = p.onaylandimi;
-                    randevu.notes = p.notes;
-                    randevu.tel = p.tel;
-                    randevu.MusteriName = p.MusteriName;
                     randevu.hizmetName = p.hizmetName;
                     randevu.randevuTarih = p.randevuTarih;
                     randevu.randevuSaat = p.randevuSaat;
+                    randevu.notes = p.notes;
+                    randevu.onaylandimi = p.onaylandimi;
 
-
-
+                    // Veritabanında kaydı güncelle
                     _context.randevus.Update(randevu);
                     await _context.SaveChangesAsync();
 
@@ -123,12 +120,56 @@ namespace Berberim.Areas.Admin.Controllers
                 }
             }
 
-            var services = await _context.hizmets.ToListAsync();
-            ViewBag.Services = services;
-            ViewBag.PersonnelList = _context.personnels.ToList();
+            // Hata durumunda tekrar ViewBag verilerini yükle
+            ViewBag.Services = await _context.hizmets.ToListAsync();
+            ViewBag.PersonnelList = await _context.personnels.ToListAsync();
 
-            return View(p); // Hatalıysa aynı sayfayı yeniden yükle
+            return View(p); // Hatalıysa aynı formu geri döndür
         }
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> UpdateAppoint(Randevu p)
+        //{
+
+
+        //    if (ModelState.IsValid) // Form verileri geçerli mi?
+        //    {
+        //        var randevu = await _context.randevus.FirstOrDefaultAsync(per => per.randevuID == p.randevuID); // Eski kaydı bul
+
+
+
+        //        if (randevu != null)
+        //        {
+        //            // Alanları güncelle
+
+        //            randevu.MusteriName = p.MusteriName;
+        //            randevu.MusteriID = p.MusteriID;
+        //            randevu.personelID = p.personelID;
+        //            randevu.hizmetID = p.hizmetID;
+        //            randevu.onaylandimi = p.onaylandimi;
+        //            randevu.notes = p.notes;
+        //            randevu.tel = p.tel;
+        //            randevu.MusteriName = p.MusteriName;
+        //            randevu.hizmetName = p.hizmetName;
+        //            randevu.randevuTarih = p.randevuTarih;
+        //            randevu.randevuSaat = p.randevuSaat;
+
+
+
+        //            _context.randevus.Update(randevu);
+        //            await _context.SaveChangesAsync();
+
+        //            return RedirectToAction("RandevuListesi"); // Başarılı olursa listeye dön
+        //        }
+        //    }
+
+        //    var services = await _context.hizmets.ToListAsync();
+        //    ViewBag.Services = services;
+        //    ViewBag.PersonnelList = _context.personnels.ToList();
+
+        //    return View(p); // Hatalıysa aynı sayfayı yeniden yükle
+        //}
 
 
 
