@@ -68,14 +68,6 @@ Admin paneli, Areas yapısıyla ayrı bir alan olarak tasarlanmıştır. Sadece 
 
 ---
 
-## Proje Görselleri
-
-### Ana Sayfa
-("Berberim/wwwroot/images/anasayfa.png")
-
-### Randevu Listesi
-("Berberim/wwwroot/images/randevu.png")
-
 
 ---
 
