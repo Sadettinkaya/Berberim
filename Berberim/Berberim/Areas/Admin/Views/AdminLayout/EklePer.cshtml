@@ -1,57 +1,51 @@
-﻿
-
-@model Berberim.Entities.Personel
-
-
+﻿@model Berberim.Entities.Personel
 
 @{
-
-	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Yeni Personel</h1>
 
 
-<form asp-area="Admin" asp-controller="AdminLayout" asp-action="EklePer" method="post">
-    <div asp-validation-summary="All"></div>
-
+<form asp-area="Admin" asp-controller="AdminLayout" asp-action="EklePer" method="post" class="p-4" style="background-color: #f8f9fa; border-radius: 10px;">
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
     <div class="mb-3">
-        <label asp-for="personelName" class="form-label"> Personel Ad Soyad Giriniz:</label>
-        <input asp-for="personelName" name="personelName" class="form-control">
-        <span asp-validation-summary="personelName"></span>
+        <label asp-for="personelName" class="form-label fw-bold" style="color: #495057;">Personel Ad Soyad Giriniz:</label>
+        <input asp-for="personelName" name="personelName" class="form-control border-primary shadow-sm">
+        <span asp-validation-for="personelName" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="personelEmail" class="form-label"> Personel Email Giriniz:</label>
-        <input asp-for="personelEmail" name="personelEmail" class="form-control">
-        <span asp-validation-summary="personelEmail"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="personelPassword" class="form-label"> Personel Sifre Giriniz:</label>
-        <input asp-for="personelPassword" name="personelPassword" class="form-control">
-        <span asp-validation-summary="personelPassword"></span>
+        <label asp-for="personelEmail" class="form-label fw-bold" style="color: #495057;">Personel Email Giriniz:</label>
+        <input asp-for="personelEmail" name="personelEmail" class="form-control border-primary shadow-sm">
+        <span asp-validation-for="personelEmail" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="musaitSaat" class="form-label">Calısma Saatleri giriniz:</label>
-        <input asp-for="musaitSaat" name="musaitSaat" class="form-control">
-        <span asp-validation-summary="musaitSaat"></span>
-
-    </div>
-
-
-    <div class="mb-3">
-        <label asp-for="salonID" class="form-label">Salon ID:</label>
-        <input asp-for="salonID" name="salonID" class="form-control" value="1" readonly />
-        <span asp-validation-for="salonID"></span>
+        <label asp-for="personelPassword" class="form-label fw-bold" style="color: #495057;">Personel Şifre Giriniz:</label>
+        <input asp-for="personelPassword" name="personelPassword" class="form-control border-primary shadow-sm">
+        <span asp-validation-for="personelPassword" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="UzmanlikID" class="form-label">Uzmanlık Alanı giriniz:</label>
-        <input asp-for="UzmanlikID" name="UzmanlikID" class="form-control">
-        <span asp-validation-summary="UzmanlikID"></span>
+        <label asp-for="musaitSaat" class="form-label fw-bold" style="color: #495057;">Çalışma Saatleri Giriniz:</label>
+        <input asp-for="musaitSaat" name="musaitSaat" class="form-control border-primary shadow-sm">
+        <span asp-validation-for="musaitSaat" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-secondary">Personeli Ekle</button>
+    <div class="mb-3">
+        <label asp-for="salonID" class="form-label fw-bold" style="color: #495057;">Salon ID:</label>
+        <input asp-for="salonID" name="salonID" class="form-control border-secondary shadow-sm" value="1" readonly />
+        <span asp-validation-for="salonID" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UzmanlikID" class="form-label fw-bold" style="color: #495057;">Uzmanlık Alanı Giriniz:</label>
+        <input asp-for="UzmanlikID" name="UzmanlikID" class="form-control border-primary shadow-sm">
+        <span asp-validation-for="UzmanlikID" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg px-5">Personeli Ekle</button>
+    </div>
 </form>

@@ -8,12 +8,12 @@
         public string? personelPassword { get; set; }
         public string? personelEmail { get; set; }
         public string? musaitSaat { get; set; } 
-        public int salonID { get; set; } // Foreign Key
-        public Salon? salon { get; set; }  // Navigation property (Salon ile ilişki kurma)
+        public int salonID { get; set; } // fk
+        public Salon? salon { get; set; } 
 
-        public int UzmanlikID { get; set; } // Foreign Key
-        public Uzmanlik? Uzmanliks { get; set; } // Çalışanın uzmanlık alanları
+        public int UzmanlikID { get; set; } // fk
+        public Uzmanlik? Uzmanliks { get; set; } 
 
-        public ICollection<Randevu>? Randevus { get; set; }   // Çalışan ile ilişkilendirilmiş randevular
+        public ICollection<Randevu>? Randevus { get; set; }   
     }
 }

@@ -3,15 +3,15 @@
     public class Hizmet
     {
         public int hizmetID { get; set; } // Primary Key
-        public string? hizmetName { get; set; } // Saç Kesimi, Saç Boyama, vb.
+        public string? hizmetName { get; set; } 
         public Double hizmetDuration { get; set; } // Dakika cinsinden
-        public decimal hizmetPrice { get; set; } // Fiyat
+        public decimal hizmetPrice { get; set; } 
 
-        public int salonID { get; set; }  // Foreign Key (Hizmet salonuna bağlı)
-        public Salon? salon { get; set; }  // Navigation property (Salon ile ilişki kurma)
+        public int salonID { get; set; }  //fk
+        public Salon? salon { get; set; }  
 
 
-        public ICollection<Randevu>? Randevus { get; set; }    // Hizmet ile ilişkilendirilmiş randevular
+        public ICollection<Randevu>? Randevus { get; set; }   
 
     }
 }

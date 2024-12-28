@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lbevD2gSzNh4Baj83ojbYNwZmualIGmTLzFvTVfoszk=",
+  "Hash": "yiinRvaCRicZpJ4Gvq70MAFF8o5GYZn68GaOB6Rf9Nk=",
   "Source": "Berberim",
   "BasePath": "_content/Berberim",
   "Mode": "Default",
@@ -8517,6 +8517,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\abim.jpg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/abim.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\abim.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\aiuzun.jpg",
       "SourceId": "Berberim",
       "SourceType": "Discovered",
@@ -8583,6 +8600,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\ornekai.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\rey.jpg",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/rey.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\rey.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\reyai.png",
+      "SourceId": "Berberim",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\",
+      "BasePath": "_content/Berberim",
+      "RelativePath": "uploads/reyai.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\reyai.png"
     },
     {
       "Identity": "C:\\Users\\Victus\\OneDrive\\Masaüstü\\Berberim\\Berberim\\Berberim\\wwwroot\\uploads\\sac.jpg",

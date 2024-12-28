@@ -8,10 +8,10 @@
         public string? workingHours { get; set; } 
         public string? salonAddress { get; set; }
 
-        // Salon ile ilişkilendirilmiş çalışanlar
+    
         public ICollection<Personel>? Personels { get; set; }
 
-        // Salon ile ilişkilendirilmiş hizmetler
+    
         public ICollection<Hizmet>? Hizmets { get; set; }
     }
 }
